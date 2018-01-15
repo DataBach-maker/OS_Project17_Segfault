@@ -1171,6 +1171,7 @@ int main(void)
 		//Release message author: Ariane. Release position fix: Yasmine
 		//If an obstacle is released notify the server where I dropped it
 		//NOTE: the X and Y of the obstacle is one step away from the robot to the direction he is looking
+		//NOTE: Our obstacle is NON-Movable
 		if (!releaseobjectmessagesent && !releaseobject)
 		{
 			printf("Sending a release object message.\n");
@@ -1182,37 +1183,37 @@ int main(void)
 
 			if (ROBOT_DIRECTION == 'W')
 			{
-				map[ROBOT_X + 1][ROBOT_Y] = 'R';
+				map[ROBOT_X + 1][ROBOT_Y] = 'B';
 				obstaclemessage[6] = ROBOT_X + 1;
 			}
 			else if (ROBOT_DIRECTION == 'E')
 			{
 				if (ROBOT_X > 1) {
-					map[ROBOT_X - 1][ROBOT_Y] = 'R';
+					map[ROBOT_X - 1][ROBOT_Y] = 'B';
 					obstaclemessage[6] = ROBOT_X - 1;
 				}
 				else
 				{
-					map[0][ROBOT_Y] = 'R';
+					map[0][ROBOT_Y] = 'B';
 					obstaclemessage[6] = 0;
 				}
 			}
 			else if (ROBOT_DIRECTION == 'S')
 			{
-				map[ROBOT_X][ROBOT_Y + 1] = 'R';
+				map[ROBOT_X][ROBOT_Y + 1] = 'B';
 				obstaclemessage[8] = ROBOT_Y + 1;
 			}
 			else if (ROBOT_DIRECTION == 'N')
 			{
 				if (ROBOT_Y > 1)
 				{
-					map[ROBOT_X][ROBOT_Y - 1] = 'R';
+					map[ROBOT_X][ROBOT_Y - 1] = 'B';
 					obstaclemessage[8] = ROBOT_Y - 1;
 				}
 				else
 				{
 					obstaclemessage[8] = 0;
-					map[ROBOT_X][0] = 'R';
+					map[ROBOT_X][0] = 'B';
 				}
 			}
 
