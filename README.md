@@ -33,6 +33,10 @@ To Run:
 
 ## Group Members:
 
+
+![](https://i.imgur.com/L5Nsr78.jpg)
+
+
 Jermaine Easton
 
 Berkay Köksal
